@@ -9,3 +9,5 @@ spec:
     ports:
     - name: http
       containerPort: 80
+
+# ❯ kubectl port-forward task-5 8080:80
