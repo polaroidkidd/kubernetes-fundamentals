@@ -1,18 +1,18 @@
 apiVersion: apps/v1
-kind: ?
+kind: ReplicaSet
 metadata:
   name: task-1
   labels:
     tier: webserver
 spec:
-  replicas: ?
+  replicas: 1
   selector:
     matchLabels:
       tier: webserver
   template:
     metadata:
       labels:
-        tier: webservr
+        tier: webserver
     spec:
       containers:
       - name: nginx
