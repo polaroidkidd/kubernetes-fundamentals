@@ -20,7 +20,7 @@ spec:
         app: task-1
     spec:
       containers:
-      - image: marcmer/demo-app:v1
+      - image: marcmer/demo-app:v2
         name: demo-app
         ports:
         - containerPort: 8000
