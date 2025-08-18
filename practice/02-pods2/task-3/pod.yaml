@@ -13,4 +13,6 @@ spec:
       name: http
     livenessProbe:
       httpGet:
-        port: 8080
+        port: 80
+
+# Container restarts because the livenessprobe is failed. It needs to listen to port 80 instead of 8080
