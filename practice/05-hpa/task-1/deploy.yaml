@@ -5,7 +5,7 @@ metadata:
     app: task-1
   name: task-1
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: task-1
