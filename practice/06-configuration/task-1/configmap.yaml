@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: task-1-cm
 data:
-  ?
+  FIRST_KEY: "FIRST_VALUE"
+  SECOND_KEY: "1234"
 
 
