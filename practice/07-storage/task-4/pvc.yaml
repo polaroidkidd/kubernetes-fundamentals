@@ -4,7 +4,7 @@ metadata:
   name: task-4
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   volumeMode: Filesystem
   storageClassName: managed
   resources:

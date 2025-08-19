@@ -5,13 +5,13 @@ metadata:
 spec:
   volumes:
   - name: data
-    ?
+    emptyDir: {}
   containers:
   - image: ubuntu
     name: ubuntu
     volumeMounts:
     - name: data
-      mountPath: ?
+      mountPath: /data
     command:
     - "/bin/bash"
     - "-c"

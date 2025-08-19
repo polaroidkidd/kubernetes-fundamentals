@@ -6,6 +6,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   volumeMode: Filesystem
-  storageClassName: ?
+  storageClassName: azurefile
   resources:
-    ?
+    requests:
+      storage: 100M

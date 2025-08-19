@@ -7,4 +7,5 @@ spec:
     - ReadWriteOnce
   volumeMode: Filesystem
   resources:
-    ?
+    requests:
+      storage: 50M
