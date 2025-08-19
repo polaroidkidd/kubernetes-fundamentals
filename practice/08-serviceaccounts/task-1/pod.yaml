@@ -6,4 +6,4 @@ spec:
   containers:
   - image: nginx
     name: task-1
-  serviceAccountName: ?
+  serviceAccountName: task-1

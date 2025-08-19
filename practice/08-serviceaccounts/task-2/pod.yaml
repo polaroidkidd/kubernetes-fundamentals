@@ -7,4 +7,4 @@ spec:
   - image: nginx
     name: task-2
   serviceAccountName: task-2
-  automountServiceAccountToken: true
+

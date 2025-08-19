@@ -1,3 +1,24 @@
+# Order Matters. The secret does not get created if the SA doesn't exist
+
+# SA
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: task-3
+
+
+---
+# Secret
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: task-3-token
+  annotations:
+    kubernetes.io/service-account.name: task-3
+
+---
+# Pod
 apiVersion: v1
 kind: Pod
 metadata:
@@ -7,3 +28,5 @@ spec:
   - image: nginx
     name: task-3
   serviceAccountName: task-3
+
+
