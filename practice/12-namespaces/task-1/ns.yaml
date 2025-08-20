@@ -1,4 +1,4 @@
 apiVersion: v1
-kind: ?
+kind: Namespace
 metadata:
-  name: ?
+  name: task-1
