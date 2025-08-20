@@ -15,4 +15,4 @@ spec:
           app.kubernetes.io/name: client
     ports:
     - protocol: TCP
-      port: 8080
+      port: 80

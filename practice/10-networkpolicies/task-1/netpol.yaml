@@ -10,40 +10,41 @@ spec:
   ingress: []
   egress: []
 ---
-kind: NetworkPolicy
+kind: NetworkPolicy # k8s then knows that the webserver is allowed to be accessed from the client
 apiVersion: networking.k8s.io/v1
 metadata:
   name: task-1-client-network-policy
 spec:
   podSelector:
     matchLabels:
-      ?
+      app.kubernetes.io/name: client # apply policy to this "pod"
   policyTypes:
   - Egress
-  egress:
+  egress: #allow outbound traffic from the client
   - to:
     - podSelector:
         matchLabels:
-          app.kubernetes.io/name: webserver
+          app.kubernetes.io/name: webserver # to the webserver
     ports:
     - protocol: TCP
-      port: 80
----
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: task-1-allow-webserver-to-receive-traffic-from-client
-spec:
-  podSelector:
-    matchLabels:
-      ?
-  policyTypes:
-  - Ingress
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app.kubernetes.io/name: ?
-    ports:
-    - protocol: TCP
-      port: 80
+      port: 80 # on port 80
+#---
+# This one is not needed
+#kind: NetworkPolicy
+#apiVersion: networking.k8s.io/v1
+#metadata:
+#  name: task-1-allow-webserver-to-receive-traffic-from-client
+#spec:
+#  podSelector:
+#    matchLabels:
+#      app.kubernetes.io/name: webserver # apply policy to the webserver
+#  policyTypes: # allow incoming network
+#  - Ingress
+#  ingress:
+#  - from:
+#    - podSelector:
+#        matchLabels:
+#          app.kubernetes.io/name: client # from the client
+#    ports:
+#    - protocol: TCP
+#      port: 80 # to port 80
